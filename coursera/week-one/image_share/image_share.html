@@ -1,0 +1,40 @@
+<head>
+  <title>image_share</title>
+</head>
+
+<body>
+  <h1>Hello from Minneapolis!</h1>
+  {{> myTime}}
+  {{> hello}}
+  <div class="containre">
+    {{> images}}
+
+  </div>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="images">
+  <div class="row">
+  {{#each images}}
+  <div class="col-xs-12 col-md-3" id="{{_id}}">
+    <div class="thumbnail ">
+      <img class="js-image" src="{{img_src}}" alt="{{img_alt}}" />
+
+    <div class="caption">
+      <h3>Thumb Label</h3>
+      <p>description of the image</p>
+      <button class="js-del-image btn btn-warning">delete</button>
+    </div>
+    </div>
+  </div>
+  {{/each}}
+</div> <!--  end of the row -->
+</template>
+
+<template name="myTime">
+  <h3>The time now is: {{timeNow}} </h3>
+</template>
